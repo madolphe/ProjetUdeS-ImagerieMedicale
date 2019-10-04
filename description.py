@@ -1,7 +1,9 @@
 import numpy as np
 import nibabel as nib
 import matplotlib.pyplot as plt
-from sklearn.preprocessing import StandardScaler
+import seaborn as sns
+import scipy as sp
+from scipy import stats
 
 class description:
     def __init__(self, imgPath):
@@ -14,13 +16,7 @@ class description:
         """
         x_min = np.amin(self.imgData)
         x_max = np.amax(self.imgData)
-        print(x_max)
-        print(x_min)
         normalised_data = (self.imgData - x_min) / (x_max - x_min)
-        print(normalised_data.shape)
-        print(self.imgData.shape)
-        #print(max(normalised_data))
-        #print(min(normalised_data))
         return normalised_data
 
 
@@ -60,29 +56,52 @@ class description:
         Fonction qui calcul la taille de la plus petite structure présente dans
         l'image et spécifie où l'on retrouve du volume partiel
         """
-    def nature_bruit(self):
+    def show_noise_distribution(self):
+        # @TODO Modifier l'image que l'on prend pour voir le bruit du "noise data" et modifier nom des axes
         """
         Fonction qui calcul la nature de bruit dans chaque image,
         spécifie si c'est un bruit de nature uniforme et s'il y
         présence d'artéfacts
+        On ne connaît pas l'image sans bruit ni la nature du bruit classique !
         """
         normalised_data = self.normalise_image()
         resized_data = normalised_data.flatten()
-        plt.hist(resized_data, bins=256, range=[0.1, 0.9])
-        plt.ylabel('Probability');
+
+        noise_data = normalised_data[0:40, 0:40, 49]
+        noise_data_resized = noise_data.flatten()
+        print(stats.kstest(noise_data_resized, 'norm'))
+
+        sns.set(style="white")
+        np.seterr(divide='ignore', invalid='ignore')
+        labels = ["first image", "noise"]
+        fig, axes = plt.subplots(1, 2, figsize=(10, 5))
+        dict2 = {'0': (resized_data, axes[0], "image de base"),
+                 '1': (noise_data_resized, axes[1], "distribution du bruit")
+                 }
+        for i in range(2):
+            sns.distplot(
+                dict2[str(i)][0],
+                ax=dict2[str(i)][1],
+            ).set(
+                xlabel=dict2[str(i)][2],
+                ylabel='Number individus',
+                xlim=[0.1, 0.9],
+                ylim=[0, 1]
+            )
+        fig.legend(labels)
         plt.show()
 
-        # Pour faire ça, il faut repérer dans chacune des images, une fenêtre de taille carrée qui semble uniforme,
-        # donc quelque chose qui est de la même couleur partout, ensuite effectuer l'histogramme de cette fenêtre et en déduire
-        # la nature du bruit.
-        # Il est également possible dans un premier temps de générer l'histogramme de l'image entière, ce qui peut être relativement
-        # intéressant en terme de comparaison.
-
-    #def snr(self):
+    def snr(self):
         """
         Fonction qui calcul le ou les SNR de l'image
         """
-
+        #S =
+        #fond =
+        #snr = np.mean(S)/np.std(fond)
+        #print(snr)
+        # possibilité de prendre différents S intéréssants
+        #
+        #
 
 if __name__ == '__main__':
     """
@@ -115,6 +134,10 @@ if __name__ == '__main__':
 
     def test_nature_bruit():
         desc = description('Data_MiseEnForme/IRM/Brain/fa.nii')
-        desc.nature_bruit()
+        desc.show_noise_distribution()
 
-    test_nature_bruit()
+    def test_snr():
+        desc = description('Data_MiseEnForme/IRM/Brain/fa.nii')
+        desc.snr()
+
+    test_snr()
