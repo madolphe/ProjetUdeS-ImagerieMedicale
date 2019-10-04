@@ -125,12 +125,12 @@ if __name__ == '__main__':
         desc = description('Data_MiseEnForme/Ultrasound/us.nii')
         desc.calculs_rms()
 
-    # test_calculs_rms()
+    test_calculs_rms()
 
     def test_normalisation():
         desc = description('Data_MiseEnForme/Ultrasound/us.nii')
         desc.normalise_image()
-    #test_normalisation()
+    test_normalisation()
 
     def test_nature_bruit():
         desc = description('Data_MiseEnForme/IRM/Brain/fa.nii')
