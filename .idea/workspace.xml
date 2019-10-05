@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bbe93774-bf3b-46c1-b20d-dd16db50c9fc" name="Default Changelist" comment="" />
+    <list default="true" id="bbe93774-bf3b-46c1-b20d-dd16db50c9fc" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/viewer-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/viewer-checkpoint.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pipfile" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pipfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/viewer.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/viewer.ipynb" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,6 +111,19 @@
               <item name="ProjetUdeS-ImagerieMedicale" type="462c0819:PsiDirectoryNode" />
               <item name="Data_MiseEnForme" type="462c0819:PsiDirectoryNode" />
               <item name="IRM" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProjetUdeS-ImagerieMedicale" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProjetUdeS-ImagerieMedicale" type="462c0819:PsiDirectoryNode" />
+              <item name="Data_MiseEnForme" type="462c0819:PsiDirectoryNode" />
+              <item name="IRM" type="462c0819:PsiDirectoryNode" />
+              <item name="Heart" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProjetUdeS-ImagerieMedicale" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProjetUdeS-ImagerieMedicale" type="462c0819:PsiDirectoryNode" />
+              <item name="Data_MiseEnForme" type="462c0819:PsiDirectoryNode" />
+              <item name="Microscopie" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -223,7 +241,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8517000" />
+    <option name="totallyTimeSpent" value="9357000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -242,7 +260,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32998884" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.10714286" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.45510203" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32959184" />
       <window_info anchor="right" x="0" y="0" width="370" height="850" id="Documentation" side_tool="true" visible="true" weight="0.114774115" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />

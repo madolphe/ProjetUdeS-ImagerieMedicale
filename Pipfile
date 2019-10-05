@@ -13,6 +13,7 @@ dipy = "*"
 holoviews = {extras = ["recommended"],version = "*"}
 pillow = "*"
 jupyter = "*"
+plotly = "*"
 
 [requires]
 python_version = "3.7"
