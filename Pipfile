@@ -14,6 +14,8 @@ holoviews = {extras = ["recommended"],version = "*"}
 pillow = "*"
 jupyter = "*"
 plotly = "*"
+seaborn = "*"
+scikit-image = "*"
 
 [requires]
 python_version = "3.7"
